@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>2024 신년계획 버킷리스트</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style></style>
+</head>
+
+<body class="bg center">
+  <h1 class="title">SPARTHON Bucket List</h1>
+  <p class="msg">꿈은 꾸는 것이 아닌, 이루는 것이다.</p>
+  <div class="flex-row wrap">
+
+
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img1 center">
+      나만의 웹 만들기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img2 center">
+      바디프로필 찍기
+
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img3 center">
+      인테리어 꾸미기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img4 center">
+      식물 키우기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img5 center">
+      10킬로그램 감량!
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img6 center">
+      내가 만든 웹사이트 자랑하기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img3 center">
+      적금들기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img1 center">
+      해외여행가기
+    </div>
+    <div onclick="javascript:alert('달성을 축하합니다!')" class="bucket img2 center">
+      PT등록하기
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const buckets = document.querySelectorAll(".bucket");
+    buckets.forEach((bucket, index) => {
+      const isDone = localStorage.getItem("bucket" + index) === "done";
+      if (isDone) {
+        bucket.classList.add("done");
+      }
+    });
+  });
+
+  const buckets = document.querySelectorAll(".bucket");
+  buckets.forEach((bucket, index) => {
+    bucket.addEventListener("click", function () {
+      bucket.classList.toggle("done");
+      if (bucket.classList.contains("done")) {
+        localStorage.setItem("bucket" + index, "done");
+      } else {
+        localStorage.setItem("bucket" + index, "");
+      }
+    });
+  });
+</script>
+
+</html>
